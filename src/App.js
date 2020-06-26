@@ -4,16 +4,16 @@ const App = (props) => {
   const [state, setState] = useState(props);
   const { name, price } = state;
 
-  // useEffect(() => {
-  //   console.log("useEffect is invoked"); //useEffectはレンダリングの後に実行される。
-  // });
+  useEffect(() => {
+    console.log("useEffect is invoked"); //useEffectはレンダリングの後に実行される。
+  });
 
   useEffect(() => {
     console.log("This is like componentDidmount");
   }, []);
 
   useEffect(() => {
-    console.log("This callback is for name only");
+    console.log("This callback is for name only"); //コールバック。nameが変化すると呼ばれる。
   }, [name]);
 
   return (
