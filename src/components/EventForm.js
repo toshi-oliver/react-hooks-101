@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const EventForm = ({ state, dispatch }) => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-
+  //  NOTE: addEventが発火すると、dispatch関数の中身がindex.jsに渡される。
   const addEvent = (e) => {
     e.preventDefault();
 
@@ -37,7 +37,7 @@ const EventForm = ({ state, dispatch }) => {
             className="form-control"
             id="formEventTitle"
             value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={(e) => setTitle(e.target.value)} // NOTE: e.target.valueは値を取ってくる慣用句みたいなもの
           />
         </div>
 

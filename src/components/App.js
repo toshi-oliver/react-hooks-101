@@ -16,6 +16,6 @@ const App = () => {
       <Events state={state} dispatch={dispatch} />
     </div>
   );
-};
+}; // JSXの場合class属性は「className」
 
 export default App;
