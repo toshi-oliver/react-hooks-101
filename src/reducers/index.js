@@ -39,7 +39,9 @@ const events = (state = [], action) => {
       const id = length === 0 ? 1 : state[length - 1].id + 1;
       return [...state, { id, ...event }];
     case "DELETE_EVENT":
-      return state;
+      // stateの各々の要素のIDと、
+      //dispatchから渡ってきたaction.idが等しくないものを選択する
+      return state.filter((event) => event.id !== action.id);
     case "DELETE_ALL_EVENTS":
       return [];
     default:
